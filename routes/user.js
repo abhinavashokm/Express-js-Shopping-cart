@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
     cartCount = await productHelper.cartCount(userId)
   }
   productHelper.getAllProduct().then((products) => {
-    res.render('user/user', { products, user, cartCount })
+    res.render('user/index', { products, user, cartCount })
   })
 });
 
