@@ -1,0 +1,28 @@
+<header>
+    <nav class="navbar navbar-expand-lg" id="navbarColor">
+        <a class="navbar-brand font-weight-bold" href="/admin" id="textCol">Admin panel</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link font-weight-bold " href="/admin" id="textCol">Products</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link font-weight-bold " href="/admin/users" id="textCol">Users</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link font-weight-bold " href="/admin/orders" id="textCol">All Orders</a>
+                </li>
+            </ul>
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{#if admin}}
+                    Admin
+                    {{/if}}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="/admin/logout">logout</a>
+                </div>
+            </div>
+    </nav>
+</header>

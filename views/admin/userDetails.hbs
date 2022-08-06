@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="col-md-12 mt-4">
+        <h2 class="text-center font-weight-bold">All Users</h2>
+    <table class="table mt-4">
+        <thead>
+            <tr>
+                <th style="width: 5% ;" scope="col">No.</th>
+                <th style="width: 16%;" scope="col">Name</th>
+                <th style="width: 12%;" scope="col">Date Created</th>
+                <th style="width: 12%;" scope="col">Last login</th>
+                <th style="width: 12%;" scope="col">status</th>
+                <th style="width: 1%;" scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each allUser}}
+            <tr>
+                <td scope="row"></td>
+                <td>{{this.userName}}</td>
+                <td>{{this.createdDate}}</td>
+                <td>{{this.lastLogin}}</td>
+                <td id="accountStatus">
+                    <span class="badge {{#if this.status}} badge-success {{else}} badge-danger {{/if}}" style="width: 70px;height: 20px">{{this.accountStatus}}</span>  
+                </td>
+
+                {{#if this.status}}
+                <td>
+                    <button onclick="accountBan('{{this._id}}','{{this.status}}')" id="{{this._id}}"
+                        class="btn btn-danger" style="width: 73px;">Ban</button>
+                </td>
+                {{else}}
+                <td>
+                    <button onclick="accountUnban('{{this._id}}','{{this.status}}')" id="{{this._id}}"
+                        class="btn btn-success " style="width: 73px;">Unban</button>
+                </td>
+                {{/if}}
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+</div>
+</div>
+
+<style>
+    table {
+  counter-reset: no -1;
+  
+}
+table tr {
+  counter-increment: row-num;
+}
+table tr td:first-child::before {
+    content: counter(row-num);
+}
+</style>
+

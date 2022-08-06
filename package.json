@@ -1,0 +1,26 @@
+{
+  "name": "e-commerse-application",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "express-fileupload": "^1.4.0",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "hbs": "^4.2.0",
+    "http-errors": "~1.6.3",
+    "mongo": "^0.1.0",
+    "mongoose": "^6.3.8",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.16",
+    "razorpay": "^2.8.1",
+    "reload": "^3.2.0",
+    "status-indicator": "^1.0.9"
+  }
+}

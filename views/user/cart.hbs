@@ -1,0 +1,48 @@
+<section>
+    <div class="container">
+        <table class="table table-borderd boarder-primary mt-3">
+            <thead>
+                <tr>
+                    <th style="width: 5%;" >Items</th>
+                    <th style="width: 10%;" >Title</th>
+                    <th style="width: 5%;" >Price</th>
+                    <th style="width: 5%;" >Quantity</th>
+                    <th style="width: 15%;" >Options</th>
+                </tr>
+            </thead>
+            <tbody style="font-family: initial;">
+                {{#each cartItems}}
+                <tr>
+                    <td><img style="width: 70px; height: 70px; border-radius: 30px;" src="/product-images/{{this.product._id}}.jpg" alt="">
+                    </td>
+                    <td>{{this.product.title}}</td>
+                    <td style=" color: #B12704; font-family: Arial,sans-serif;">₹{{this.product.price}}</td>
+                    <td>
+                        <button onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',-1)"
+                            class="cart-item-count mr-2">-</button>
+                        <span id="{{this.product._id}}">{{this.quantity}}</span>
+                        <button onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',+1)"
+                            class="cart-item-count ml-2">+</button>
+                    </td>
+
+                    <td>
+                        <a href="/place-order-single/{{this.product.price}}/{{this.quantity}}/{{this.product._id}}"
+                            class="btn font-weight-light"
+                            style="background-color: #ffc107; color:black; width: 6rem;">Buy Now</a>
+                        <button onclick="removeCart('{{this.product._id}}')" class="btn btn-danger ml-3">Remove</button>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <hr style="background-color: black;">
+        <div class="float-right">
+            <h4 style="font-family: Arial,sans-serif;" class="mt-4 mr-5">Total Price: ₹<span
+                    style=" color: #B12704;  font-family: Arial,sans-serif;" id="totalPrice">{{totalPrice}}</span></h4>
+            <a href="/place-order" class="btn btn-success mt-2"
+                style="width:12rem; background-color: #ffc107; color:black;">Place Order All</a>
+        </div>
+    </div>
+</section>
+
+

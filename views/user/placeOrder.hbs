@@ -1,0 +1,56 @@
+<section>
+    <div class="container">
+    <form   id="checkoutForm">
+        <div class="row">
+            <div class="col-md-6 mt-4">
+                <h2 class=" font-weight-bold mt-5">Enter delivery deatails</h2>
+                
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input name="address" type="text" class="form-control" id="address" aria-describedby="emailHelp" placeholder="Enter your address">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pincode">Pincode</label>
+                        <input name="pincode" type="text" class="form-control" id="pincode" placeholder="Enter pincode">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobileNum">Mobile</label>
+                        <input name="mobile" type="tel" class="form-control" id="mobileNum" placeholder="Enter phone number">
+                        <input type="text" name="userId" value="{{userId}}" hidden>
+                        <input type="text" name="userName" value="{{user.userName}}" hidden>
+                        {{#if singleOrder}}
+                            <input type="number" name="quantity" value="{{quantity}}" hidden>
+                            <input type="number" name="totalPrice" value="{{totalPrice}}" hidden>
+                            <input type="text" name="single" value="{{singleOrder}}" hidden>
+                            <input type="text" name="proId" value="{{proId}}" hidden>
+                        {{/if}}
+                    </div>
+            </div>
+
+
+            <div class="col-md-6 ">
+                <div class="checkout" id="paymentCol" style="background-color: #ffc107;">
+                    <h5>Total amount : ₹{{totalPrice}}</h5>
+                  <hr>
+                  <div class="payment">
+                    <p>Payment method</p>
+                    <label for="" class="radio-inline">
+                        <input type="radio" value="COD" name="payment-method"> Cash on delivery
+                    </label>
+                    <br>
+                     <label for="" class="radio-inline">
+                        <input type="radio" value="ONLINE" name="payment-method"> Online payment
+                    </label>
+                    <br>
+                    <button class="btn btn-success float-right mt-4" type="submit">Checkout</button>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+    </form>    
+    </div>
+</section>
+

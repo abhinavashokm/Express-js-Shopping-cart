@@ -1,0 +1,57 @@
+<header>
+    <div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light "  id="navbarColor">
+        <a class="textCol navbar-brand font-weight-bold" id="textCol" href="/">shopping-cart</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link font-weight-bold" href="/" id="textCol" >products</a>
+                </li>
+                <li class="nav-item">
+
+                    <a class="nav-link font-weight-bold" href="/cart" id="textCol" >Cart<span class="badge badge-success"
+                            id="cart-count">{{cartCount}}</span></a>
+
+                </li>
+                {{#if user}}
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold" href="/order-page" id="textCol" >orders</a>
+                </li>
+                {{/if}}
+            </ul>
+            <div class="dropdown ">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{#if user}}
+                    {{user.userName}}
+                    {{else}}
+                    account
+                    {{/if}}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    {{#if user}}
+                    <a class="dropdown-item" href="/logout">logout</a>
+                    {{else}}
+                    <a class="dropdown-item" href="/login">Login</a>
+                    <a class="dropdown-item" href="/sign-up">sign-up</a>
+                    {{/if}}
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<style>
+    body {
+    background: #fdd935;
+}
+    #dropdownMenuButton {
+        background: white;
+    }
+</style>

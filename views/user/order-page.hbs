@@ -1,0 +1,100 @@
+<section class="h-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-10" style="margin-right: 6rem;">
+        <div class="card" style="border-radius: 10px; width: 63rem;">
+
+          <div class="card-body p-4 ">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+
+            </div>
+
+            {{!-- PRODUCT CARD --}}
+
+
+            {{#each items}}
+            <div class="row">
+              <div class="col-2 col-md-2">
+                <img style="border-radius: 30px;" src="/product-images/{{this.product._id}}.jpg" class="img-fluid"
+                  alt="Phone">
+              </div>
+              <div class="col-2 col-md-2 text-center d-flex justify-content-center align-items-center">
+                <p class="text-muted mb-0">{{this.product.title}}</p>
+              </div>
+              <div class="col-2 col-md-2 text-center d-flex justify-content-center align-items-center">
+                <p class="text-muted mb-0 small">{{this.product.category}}</p>
+              </div>
+              <div class="col-2 col-md-2 text-center d-flex justify-content-center align-items-center">
+                <p class="text-muted mb-0 small">{{this.product.description}}</p>
+              </div>
+
+              <div class="col-2 col-md-2 text-center d-flex justify-content-center align-items-center">
+                <p class="text-muted mb-0 small">Qty: {{this.quantity}}</p>
+              </div>
+              <div class="col-2 col-md-2 text-center d-flex justify-content-center align-items-center">
+                <p class="text-muted mb-0 small">₹{{this.product.price}}</p>
+              </div>
+            </div>
+            {{!-- progress bar --}}
+            <div class="row d-flex align-items-center">
+              <div class="col-md-2">
+                <p class="text-muted mb-0 small">Track Order</p>
+              </div>
+              <div class="col-md-10">
+                <div class="progress" style="height: 6px; border-radius: 16px;">
+                  
+                  <div class="progress-bar" role="progressbar"
+                    style="width: 25%; border-radius: 16px; background-color: #5d63b5;" aria-valuenow="25"
+                    aria-valuemin="0" aria-valuemax="100"></div>
+        
+                </div>
+                <div class="d-flex justify-content-around mb-1">
+                  <p class="text-muted mt-1 mb-0 small ms-xl-5">Order placed</p>
+                  <p class="text-muted mt-1 mb-0 small ms-xl-5">Out for delivary</p>
+                  <p class="text-muted mt-1 mb-0 small ms-xl-5">Delivered</p>
+                </div>
+              </div>
+            </div>
+            {{!-- prograss bar end --}}
+            <hr class="mb-4" style="background-color: #e0e0e0; opacity: 1;">
+            {{/each}}
+
+
+
+
+
+            {{!-- // PRODUCT CARD END --}}
+
+
+            <div class="d-flex justify-content-between pt-2">
+              <p class="fw-bold mb-0">Order Details</p>
+
+
+              <p class="text-muted mb-0"><span class="fw-bold me-4">Total</span> <span
+                  style="color: #B12704; font-family: Arial,sans-serif;"> ₹{{orderDetails.totalPrice}}</span></p>
+            </div>
+
+            <div class="d-flex justify-content-between mb-5">
+
+
+            </div>
+          </div>
+          {{!-- <div class="card-footer border-0 px-4 py-5"
+            style="background-color: #1183a6; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+            <h5 class="d-flex align-items-center justify-content-end text-white text-uppercase mb-0">Total
+              paid: <span class="h2 mb-0 ms-2">₹{{orderDetails.totalPrice}}</span></h5>
+          </div> --}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .gradient-custom {
+    /* fallback for old browsers */
+    background: #fdd935;
+
+
+  }
+</style>

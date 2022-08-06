@@ -1,0 +1,28 @@
+<div class="container  mt-5">
+  <div class="row">
+    <div class="col-md-6 m-auto">
+      <h2 class="text-center font-weight-bold">Create new account</h2>
+      <form action="/sign-up" method="post">
+        <div class="form-group">
+          <label for="Username">Username</label>
+          <input name="userName" type="text" class="form-control" id="Username" placeholder="Enter name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input name="userEmail" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input name="userPassword" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <a href="/login" style="color: #002082;">already have an accout?</a>
+        <div class="mt-4">
+          <button type="submit" class="btn btn-primary float-right ">Create</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

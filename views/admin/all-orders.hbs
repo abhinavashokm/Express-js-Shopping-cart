@@ -1,0 +1,140 @@
+<div class="container">
+
+  <div class="mt-4">
+    <h2 class="text-center font-weight-bold">All Orders</h2>
+    <table class="table table-striped mt-4 table-bordered" id="ordersTable">
+      <thead>
+        <tr>
+
+          <th scope="col">OrderId</th>
+          <th scope="col">status</th>
+          <th scope="col">OrderDate</th>
+          <th scope="col">Customer</th>
+          <th scope="col">phone</th>
+          <th scope="col">Total</th>
+          <th scope="col">Products</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each allOrders}}
+        <tr>
+
+          <td>{{this._id}}</td>
+          <td> <a href="" class="badge badge-success">{{this.status}}</a> </td>
+          <td>{{this.date}},{{this.time}}</td>
+          <td>{{this.userName}}</td>
+          <td>{{this.deliveryDetails.mobile}}</td>
+          <td style=" color: #B12704; font-family: Arial,sans-serif;">₹{{this.totalPrice}}</td>
+          <td>
+            <a data-toggle="modal" data-target="#popupWindow" class="btn btn-primary mx-auto my-auto"
+              style="width: 55px; height: 30px; font-size: 14px;" href="">View</a>
+          </td>
+
+          <td>
+            <a style="width: 55px; height: 30px; font-size: 14px; color: white;" id="proView" class="btn btn-success"
+              onclick="if(confirm('are you sure want to ship order?')){changeOrderStatus('{{this._id}}')}">
+              Ship</a>
+          </td>
+        </tr>
+        {{!-- product view --}}
+        <div class="modal" id="popupWindow">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button class="close" type="button" style="color: red;" data-dismiss="modal">x</button>
+              </div>
+              <div class="modal-body">
+                <div class=" d-flex justify-content-center align-items-center h-100 w-10">
+                  <div class="card border-top border-bottom border-3"
+                    style="border-color: #f37a27 !important; width: 100%;">
+                    <div class="card-body ">
+                      <p class="lead fw-bold" style="color: #f37a27;">Purchase Reciept</p>
+                      <div class="row">
+                        <div class="col mb-3">
+                          <p class="small text-muted mb-1">Date</p>
+                          <p>{{this.date}}</p>
+                        </div>
+                        <div class="col mb-3">
+                          <p class="small text-muted mb-1">Order No.</p>
+                          <p>{{this._id}}</p>
+                        </div>
+                      </div>
+                      <div class="mx-n5 px-5 py-4" style="background-color: #f2f2f2;">
+                        <div class="row">
+                          <div class="col-md-6 col-lg-9">
+                            <p>{{this.productTitle}}</p>
+                          </div>
+                          <div class="col-md-5 col-lg-3">
+                            <p style="margin-right: -1px;">₹{{this.productPrice}}</p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-8 col-lg-9">
+                            <p class="mb-0">Quantity</p>
+                          </div>
+                          <div class="col-md-4 col-lg-3">
+                            <p class="mb-0">0{{this.quantity}}</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row my-4">
+                        <div class="col-md-8  col-lg-9 ">
+                          <p class="lead fw-bold mb-0" style="color: #f37a27;">Total</p>
+                        </div>
+
+                        <div class="col-md-4  col-lg-3">
+                          <p class="lead fw-bold mb-0" style="color: #f37a27;">₹{{this.totalPrice}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{!-- product view end --}}
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+
+
+<style>
+  @media (min-width: 1025px) {
+    .h-custom {
+      height: 100vh !important;
+    }
+  }
+
+  .horizontal-timeline .items {
+    border-top: 2px solid #ddd;
+  }
+
+  .horizontal-timeline .items .items-list {
+    position: relative;
+    margin-right: 0;
+  }
+
+  .horizontal-timeline .items .items-list:before {
+    content: "";
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: #ddd;
+    top: 0;
+    margin-top: -5px;
+  }
+
+  .horizontal-timeline .items .items-list {
+    padding-top: 15px;
+  }
+</style>

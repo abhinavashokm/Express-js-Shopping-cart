@@ -1,0 +1,32 @@
+/* #bodyColor{
+    background:#fdd935;
+} */
+
+
+#textCol {
+    color: white;
+}
+
+#cardBox {
+    width: 11rem;
+    height: 18rem;
+    border: 0px solid;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+}
+
+#paymentCol {
+    margin-top: 120px;
+    margin-left: 40px;
+    border: 0px solid;
+    width: 390px;
+    height: 270px;
+    padding: 20px 20px 28px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+    box-sizing: border-box;
+}
+
+#navbarColor {
+    background: #3e3333;
+}

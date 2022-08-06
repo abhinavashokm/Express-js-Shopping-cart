@@ -1,0 +1,22 @@
+<section  id="bodyColor">
+    <div class="container pt-5">
+        <div class="row">
+            {{#each products}}
+            <div class="col-md-2 p-3 ">
+                <div class="card text-center" id="cardBox">
+                    <img class="card-img-top" src="/product-images/{{this._id}}.jpg" alt="Card image cap"
+                        style="height: 9rem; width: 9rem; margin-left: 17px;">
+                    <div class="card-body">
+                        <h5 style=" font-weight: bold; font-size: 15px;" class="card-title">{{this.title}}</h5>
+                        <p style=" color: #B12704; font-size: 18px; font-family: Arial,sans-serif;" class="card-text">
+                            ₹{{this.price}}</p>
+                        <button style="width: 6rem; height: 2rem; font-size: 14px; " onclick="addToCart('{{this._id}}')"
+                            class="btn btn-primary">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>
+
