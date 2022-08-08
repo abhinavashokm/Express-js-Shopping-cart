@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
     cartCount = await productHelper.cartCount(userId)
   }
   productHelper.getAllProduct().then((products) => {
-    res.render('user/index', { products, user, cartCount })
+    res.render('index', { products, user, cartCount })
   })
 });
 
@@ -32,7 +32,6 @@ router.get('/login', (req, res) => {
   } else {
     res.render('user/user-login', { 'loginErr': req.session.userLoginErr })
     req.session.userLoginErr = false
-
   }
 
 })
@@ -60,7 +59,6 @@ router.post('/login', (req, res) => {
 
 router.get('/sign-up', (req, res) => {
   res.render('user/sign-up')
-
 })
 
 router.post('/sign-up', (req, res) => {
@@ -91,7 +89,6 @@ router.get('/cart', verifyLogin, async (req, res) => {
 
 router.get('/addToCart/:id', (req, res) => {
 
-
   let proId = req.params.id
   let userId = req.session.user._id
 
@@ -109,6 +106,7 @@ router.get('/removeCart/:id', (req, res) => {
     res.json(responce)
   })
 })
+
 router.post('/changeQuantity', (req, res) => {
   let user = req.body.user
 

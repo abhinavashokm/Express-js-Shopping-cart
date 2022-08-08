@@ -135,7 +135,7 @@ module.exports={
             count=cart.product.length
              }
              resolve(count)
-             console.log(count)
+             
         })
     },
     removeCart:(proId,userId)=>{

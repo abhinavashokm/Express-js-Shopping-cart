@@ -32,7 +32,7 @@ module.exports = {
             let loginStatus = false
             let responce = {}
             let date = await productHelpers.getDateTime()
-            let user = await db.get().collection(collection.USER_COLLECTION).findOne({ userEmail: userData.userEmail })
+            let user = await db.get().collection(collection.USER_COLLECTION).findOne({ userName: userData.userName })
             if (user) {
                 bcrypt.compare(userData.userPassword, user.userPassword).then((status) => {
                     if (status) {
@@ -55,7 +55,7 @@ module.exports = {
                     }
                 })
             } else {
-                responce.loginErr = 'invalid email address!'
+                responce.loginErr = 'invalid user name!'
                 responce.status = false
                 resolve(responce)
             }
